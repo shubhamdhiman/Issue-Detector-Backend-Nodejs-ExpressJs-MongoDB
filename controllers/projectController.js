@@ -26,7 +26,8 @@ const createProject = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"create project page"})
 
     // res.render('createProject',{title:"Issue Tracker || Create Project "})
-    res.send(project)
+    // res.send(project)
+    res.redirect('/')
 })
 const projectDetails = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"project details Page"})

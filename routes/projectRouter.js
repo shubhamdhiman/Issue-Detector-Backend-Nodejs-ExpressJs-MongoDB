@@ -1,6 +1,7 @@
 const express = require("express");
 const {
   homePage,
+  createProjectPage,
   createProject,
   projectDetails,
   createIssue,
@@ -8,8 +9,8 @@ const {
 const router = express.Router();
 
 router.route("/").get(homePage);
-router.route("/create_project").post(createProject);
-router.route("/project_detail/:id").get(projectDetails);
-router.route("/create_issue/:id").post(createIssue);
+router.route("/create_project").get(createProjectPage).post(createProject);
+router.route("/project_details/:id").get(projectDetails);
+router.route("/create_issue/:id").get(createIssue);
 
 module.exports = router;

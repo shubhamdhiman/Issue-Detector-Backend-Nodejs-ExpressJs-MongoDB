@@ -31,10 +31,13 @@ const createProject = asyncHandler( async (req,res)=>{
 })
 const projectDetails = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"project details Page"})
-    res.render('projectDetails',{title:"Issue Tracker || Details "})
+    const project = await ProjectModel.findById(req.params.id)
+    console.log(project)
+    // console.log(req.params)
+    res.render('projectDetails',{title:"Issue Tracker || Details ",project})
 })
 const createIssue = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"create issue Page"})
     res.render('createIssue',{title:"Issue Tracker || Create Issue "})
 })
-module.exports = {homePage, createProjectPage, createProject, projectDetails, createIssue} 
+module.exports = {homePage, createProjectPage, createProject, projectDetails, createIssue}  

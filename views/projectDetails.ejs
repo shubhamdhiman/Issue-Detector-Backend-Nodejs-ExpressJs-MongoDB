@@ -1,2 +1,23 @@
 
- <h1>Project Details Page</h1>
+<div class="container"> 
+    <p class="heading">Project Details</p>
+    <div class="projectPage">
+        <p class="projectName"><%- project.projectName %></p>
+        <p class="projectDesc"><%- project.description %></p>
+        <p class="projectAuthor">Author: <span class="name"><%- project.authorName %></span></p>
+    </div>
+    <p class="bugsHeading">Bugs</p>
+    <div class="bugs">
+        <p>Title: Editing</p>
+        <p>desc: Editing</p>
+        <div>Label:
+            <label for="first">Editing</label>
+            <input type="checkbox" id="first">
+            <label for="second">Syntax</label>
+            <input type="checkbox" id="second">
+            <label for="third">type</label>
+            <input type="checkbox" id="third">
+        </div>
+        <p>author: Editing</p>
+    </div>
+</div>

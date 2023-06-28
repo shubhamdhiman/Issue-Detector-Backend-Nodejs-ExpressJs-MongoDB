@@ -1,14 +1,20 @@
 const ProjectModel = require("../models/projectModel")
 const asyncHandler = require("express-async-handler")
+
+
 const homePage = asyncHandler( async (req,res)=>{
+    let allProjects = await ProjectModel.find({}).sort('-createdAt')
     // res.status(200).json({message:"Home Page"})
-    res.render('homePage',{title:"Issue Tracker || Home "})
+    res.render('homePage',{title:"Issue Tracker || Home ",allProjects})
 })
+
+
 const createProjectPage = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"create project page"})
-
     res.render('createProject',{title:"Issue Tracker || Create Project "})
 })
+
+
 const createProject = asyncHandler( async (req,res)=>{
     // console.log("this is req.body: ", req.body)
     const project = await ProjectModel.create({

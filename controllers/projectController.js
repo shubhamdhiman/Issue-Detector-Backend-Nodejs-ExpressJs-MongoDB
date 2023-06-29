@@ -1,4 +1,5 @@
 const ProjectModel = require("../models/projectModel")
+const IssueModel  = require("../models/issueModel")
 const asyncHandler = require("express-async-handler")
 
 
@@ -11,6 +12,7 @@ const homePage = asyncHandler( async (req,res)=>{
 
 const createProjectPage = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"create project page"})
+
     res.render('createProject',{title:"Issue Tracker || Create Project "})
 })
 
@@ -32,12 +34,31 @@ const createProject = asyncHandler( async (req,res)=>{
 const projectDetails = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"project details Page"})
     const project = await ProjectModel.findById(req.params.id)
-    console.log(project)
+    // console.log(project)
     // console.log(req.params)
     res.render('projectDetails',{title:"Issue Tracker || Details ",project})
 })
+const createIssuePage = asyncHandler( async (req,res)=>{
+    // res.status(200).json({message:"create issue Page"})
+    // console.log(req.params.id)
+    const project = await ProjectModel.findById(req.params.id)
+    // console.log(project)
+    res.render('createIssue',{title:"Issue Tracker || Create Issue ", project})
+})
 const createIssue = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"create issue Page"})
-    res.render('createIssue',{title:"Issue Tracker || Create Issue "})
+    // console.log(req.params.id)
+    // const project = await ProjectModel.findById(req.params.id)
+    // console.log(project)
+    // res.render('createIssue',{title:"Issue Tracker || Create Issue ", project})
+    console.log(req.body)
+    const issue = await IssueModel.create({
+        title:req.body.title,
+        description:req.body.description,
+        label:req.body.label,
+        issueAuthor:req.body.author
+    })
+    issue.save()
+    res.redirect("back")
 })
-module.exports = {homePage, createProjectPage, createProject, projectDetails, createIssue}  
+module.exports = {homePage, createProjectPage, createProject, projectDetails, createIssuePage, createIssue}  

@@ -1,9 +1,9 @@
 <div class="container">
     <p class="heading">Create Project</p>
     <form id="createProjectForm" action="/create_project" method="POST">
-        <input type="text" name="projectName" placeholder="Project Name">
-        <textarea rows="7" name="description" placeholder="Description..."></textarea>
-        <input type="text" name="authorName" placeholder="Author Name">
+        <input type="text" name="projectName" placeholder="Project Name" required>
+        <textarea rows="7" name="description" placeholder="Description..." required></textarea>
+        <input type="text" name="authorName" placeholder="Author Name" required>
         <input type="submit"value="Create">
     </form>
 </div>

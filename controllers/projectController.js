@@ -33,7 +33,7 @@ const createProject = asyncHandler( async (req,res)=>{
 const projectDetails = asyncHandler( async (req,res)=>{
     // res.status(200).json({message:"project details Page"})
     const project = await ProjectModel.findById(req.params.id).populate({path:"issues"})
-    console.log(project) 
+    // console.log(project.issues[0]) 
     res.render('projectDetails',{title:"Issue Tracker || Details ",project})
 })
 

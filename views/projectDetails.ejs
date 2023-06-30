@@ -1,27 +1,61 @@
+<div class="container">
+  <p class="heading">Project Details</p>
 
-<div class="container"> 
-    <p class="heading">Project Details</p>
-    
-    <div class="detailsContainer">
-        <div class="projectDetailSection">
-            <p class="projectName"><%- project.projectName %></p>
-            <p class="projectDesc"><%- project.description %></p>
-            <div class="createIssueAndAuthor">
-                <p class="projectAuthor">Author: <span class="name"><%- project.authorName %></span></p>
-                <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>"><i class="fa-solid fa-circle-plus fa-3x "></i
-                    ></a>
-                    <div class="tooltip tooltipCIProjectDetails"><p>Create Issue</p></div>
-            </div>
-        </div>
-        <div class="functionality">
-            <div class="btnSection">
-                <button>Filter</button>
-                <button></button>
-            </div>
-        </div>
+  <div class="detailsContainer">
+    <div class="projectDetailSection">
+      <p class="projectName"><%- project.projectName %></p>
+      <p class="projectDesc"><%- project.description %></p>
+      <div class="createIssueAndAuthor">
+        <p class="projectAuthor">
+          Author: <span class="name"><%- project.authorName %></span>
+        </p>
+        <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>"
+          ><i class="fa-solid fa-circle-plus fa-3x"></i
+        ></a>
+        <div class="tooltip tooltipCIProjectDetails"><p>Create Issue</p></div>
+      </div>
     </div>
-    <!-- <p class="bugsHeading">Bugs</p> -->
-    <!-- <div class="bugs">
+    <div class="functionality">
+      <div class="btnSection">
+        <div id="filterSection" class="filterSection">
+          <div class="head">Filter:</div>
+          <div style="display: flex; align-items: center">
+            <input type="checkbox" id="bug" value="Bug" />
+            <label for="bug" class="labelCheckbox">Bug</label>
+            <input type="checkbox" id="typeError" value="Type Error" />
+            <label for="typeError" class="labelCheckbox">Type Error</label>
+            <input type="checkbox" id="syntaxError" value="Syntax Error" />
+            <label for="syntaxError" class="labelCheckbox">Syntax Error</label>
+            <input type="checkbox" id="lineMissing" value="Line Missing" />
+            <label for="lineMissing" class="labelCheckbox">Line Missing</label>
+            <button class="filterButton">Filter</button>
+          </div>
+        </div>
+        <div id="searchSection" class="searchSection">
+          <div class="head">Search:</div>
+          <div>
+            <input class="searchBar" type="text" placeholder="Search..." />
+            <button class="searchButton">Search</button>
+          </div>
+        </div>
+      </div>
+      <hr style="margin:.5rem 0;">
+      <div class="bugSection">
+        <% project.issues.forEach((issue)=>{ %>
+
+            <div class="bug">
+                <p class="title">Title: <span class="name"><%- issue.title %></span></p>
+                <p class="description">Description: <%- issue.description %></p>
+                <p class="label">Label: <%- issue.label %></p>
+                <p class="author">Author: <%- issue.issueAuthor %></p>
+               </div>
+          <% }) %> 
+       
+      </div>
+    </div>
+  </div>
+  <!-- <p class="bugsHeading">Bugs</p> -->
+  <!-- <div class="bugs">
         <p>Title: Editing</p>
         <p>desc: Editing</p>
         <div>Label:

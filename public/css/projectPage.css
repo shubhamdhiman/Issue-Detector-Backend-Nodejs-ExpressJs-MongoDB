@@ -1,46 +1,170 @@
-.projectPage{
-    text-align:left;
-    width:80%;
-    border:2px solid black;
-    border-radius:2rem;
-    margin-top:2rem;
-    padding:1rem;
-    box-sizing:border-box;
+.projectPage {
+    text-align: left;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
 }
-.bugs{
-    text-align:left;
-    width:80%;
-    border:2px solid black;
-    border-radius:2rem;
-    margin-top:1rem;
-    padding:1rem;
-    box-sizing:border-box;
+
+.detailsContainer {
+    width: 80%;
+    height:60vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding:2rem;
 }
-.bugsHeading{
-    margin-top:3rem;
-    font-size:2rem;
-    font-weight:bold;
+
+.projectDetailSection {
+    width: 50%;
+    height:90%;
+    border: 2px solid black;
+    /* border-radius: 2rem; */
+    padding: 1rem;
+    box-sizing: border-box;
 }
-.projectPage .projectName {
+
+.projectDetailSection .projectName {
     font-size: 2.2rem;
     font-weight: 500;
     /* color:#2cc810; */
-    color:darkviolet;
-    font-weight:bold;
+    color: darkviolet;
+    font-weight: bold;
 }
 
-.projectPage .projectDesc {
+.projectDetailSection .projectDesc {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 1rem 0;
 }
-.projectPage .name{
-    color:darkviolet;
-    font-size:1.5rem;
-    font-weight:bold;
-}
-.projectPage .projectAuthor {
+
+.projectDetailSection .projectAuthor {
     font-size: 1.4rem;
     font-weight: 500;
     display: inline-block;
+}
+
+.projectDetailSection .projectAuthor .name {
+    color: darkviolet;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.detailsContainer .functionality {
+    width: 45%;
+    border: 2px solid black;
+    padding: 1rem;
+    height:90%;
+    /* border-radius: 2rem; */
+}
+
+.functionality .filterSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:1rem;
+    /* flex-direction: column; */
+}
+
+.head {
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    /* flex-direction: column; */
+}
+
+.functionality .searchSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    margin-left:1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+}
+.labelCheckbox{
+    font-size:1.1rem;
+    margin-left:.2rem;
+}
+.filterButton, .searchButton{
+    padding:.4rem 1rem;
+    font-size:1.3rem;
+    /* border-radius:1rem; */
+    margin-left:1rem;
+    background-color: #39ff14;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.filterButton:hover, .searchButton:hover{
+    border-radius:1.5rem;
+}
+.searchBar{
+    padding:.4rem 1rem;
+    font-size:1.3rem;
+    margin-left:1rem;
+    transition: all .2s ease-in-out;
+}
+.searchBar:focus{
+    border-radius:1.5rem;
+}
+input[type="checkbox"]::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    border-radius:3px;
+    box-shadow: inset 1em 1em #39ff14;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.bugSection{
+    /* border:2px solid black; */
+    padding:.5rem;
+    height:400px;
+    overflow-y: scroll;
+}
+.bug{
+    border:2px solid black;
+    padding:.5rem;
+    margin:.5rem 0;
+}
+.bugSection .title{
+    font-size:1.2rem;
+    font-weight:bold;
+    color:blueviolet;
+}
+.bugSection .title .name{
+    font-size:1.4rem;
+    font-weight:bold;
+}
+.bugSection .description{
+    font-size:1.05rem;
+    margin:.5rem 0;
+    font-weight:bold;
+}
+.bugSection .label{
+    font-size:1.2rem;
+    font-weight:bold;
+}
+.bugSection .author{
+    font-size:1.2rem;
+    margin:.5rem 0;
+    font-weight:bold;
 }

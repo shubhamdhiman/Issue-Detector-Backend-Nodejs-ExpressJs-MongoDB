@@ -1,17 +1,27 @@
 
 <div class="container"> 
     <p class="heading">Project Details</p>
-    <div class="projectPage">
-        <p class="projectName"><%- project.projectName %></p>
-        <p class="projectDesc"><%- project.description %></p>
-        <p class="projectAuthor">Author: <span class="name"><%- project.authorName %></span></p>
-        <div class="createIssue">
-            <a href="../create_issue/<%- project.id %>"><i class="fa-solid fa-circle-plus fa-3x boxLink"></i
-                ></a>
+    
+    <div class="detailsContainer">
+        <div class="projectDetailSection">
+            <p class="projectName"><%- project.projectName %></p>
+            <p class="projectDesc"><%- project.description %></p>
+            <div class="createIssueAndAuthor">
+                <p class="projectAuthor">Author: <span class="name"><%- project.authorName %></span></p>
+                <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>"><i class="fa-solid fa-circle-plus fa-3x "></i
+                    ></a>
+                    <div class="tooltip tooltipCIProjectDetails"><p>Create Issue</p></div>
+            </div>
+        </div>
+        <div class="functionality">
+            <div class="btnSection">
+                <button>Filter</button>
+                <button></button>
+            </div>
         </div>
     </div>
-    <p class="bugsHeading">Bugs</p>
-    <div class="bugs">
+    <!-- <p class="bugsHeading">Bugs</p> -->
+    <!-- <div class="bugs">
         <p>Title: Editing</p>
         <p>desc: Editing</p>
         <div>Label:
@@ -23,5 +33,5 @@
             <input type="checkbox" id="third">
         </div>
         <p>author: Editing</p>
-    </div>
+    </div> -->
 </div>

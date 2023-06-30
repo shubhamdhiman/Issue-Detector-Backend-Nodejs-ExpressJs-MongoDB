@@ -132,6 +132,7 @@
     display: block;
 }
 
+
 .createIssue:hover+.tooltip {
     display: block;
 }

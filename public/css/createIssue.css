@@ -1,6 +1,48 @@
 .margin{
     margin:1rem 0;
 }
+.detailsContainer{
+    width:80%;
+    border:2px solid black;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+.projectDetailSection{
+    width:50%;
+    border:2px solid black;
+    border-radius:2rem;
+    margin-top:2rem;
+    padding:1rem;
+    box-sizing:border-box;
+}
+.projectDetailSection .projectName{
+    font-size: 2.2rem;
+    font-weight: 500;
+    /* color:#2cc810; */
+    color:darkviolet;
+    font-weight:bold;
+}
+.projectDetailSection .projectDesc{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+.projectDetailSection .projectAuthor{
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: inline-block;
+}
+.projectDetailSection .projectAuthor .name{
+    color:darkviolet;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+.detailsContainer .functionality{
+    width:45%;
+    border:2px solid black;
+    
+}
 .container #labelDropdown{
     font-size:2rem;
 }
@@ -44,3 +86,24 @@
     color:darkviolet;
     font-weight:bold;
 }
+.createIssueAndAuthor{
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+}
+.pdCreateIssueLink{
+    margin-right:2rem;
+    
+}
+.tooltipCIProjectDetails{
+    width: 120px;
+    /* left: 30px; */
+    right:-15px;
+    top: -50px;
+    background: #39ff14;
+}
+.pdCreateIssueLink:hover+.tooltip {
+    display: block;
+}
+
+

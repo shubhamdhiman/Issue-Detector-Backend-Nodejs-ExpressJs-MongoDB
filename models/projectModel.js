@@ -20,7 +20,7 @@ const projectsSchema = new mongoose.Schema({
             ref:'Issue'
         }
     ],
-    labesl:[
+    labels:[
         {
             type:String,
         }

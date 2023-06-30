@@ -20,7 +20,7 @@
 
 .projectDetailSection {
     width: 50%;
-    height:90%;
+    height:100%;
     border: 2px solid black;
     /* border-radius: 2rem; */
     padding: 1rem;
@@ -51,6 +51,12 @@
     color: darkviolet;
     font-size: 1.5rem;
     font-weight: bold;
+}
+.projectDetailSection .pdCreateIssueLink .icon{
+    color:black;
+}
+.projectDetailSection .pdCreateIssueLink .icon:hover{
+    color:darkviolet;
 }
 
 .detailsContainer .functionality {
@@ -167,4 +173,9 @@ input[type="checkbox"]:checked::before {
     font-size:1.2rem;
     margin:.5rem 0;
     font-weight:bold;
+}
+.noIssueFound{
+    /* margin:0 auto; */
+    display: flex;
+    justify-content: center;
 }

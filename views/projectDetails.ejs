@@ -10,7 +10,7 @@
           Author: <span class="name"><%- project.authorName %></span>
         </p>
         <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>"
-          ><i class="fa-solid fa-circle-plus fa-3x"></i
+          ><i class="fa-solid fa-circle-plus fa-3x icon"></i
         ></a>
         <div class="tooltip tooltipCIProjectDetails"><p>Create Issue</p></div>
       </div>
@@ -41,15 +41,21 @@
       </div>
       <hr style="margin:.5rem 0;">
       <div class="bugSection">
-        <% project.issues.forEach((issue)=>{ %>
+        <% if(project.issues.length > 0 ){ %>
+            <!-- <h1>foo</h1> -->
+            <% project.issues.forEach((issue)=>{ %>
 
-            <div class="bug">
-                <p class="title">Title: <span class="name"><%- issue.title %></span></p>
-                <p class="description">Description: <%- issue.description %></p>
-                <p class="label">Label: <%- issue.label %></p>
-                <p class="author">Author: <%- issue.issueAuthor %></p>
-               </div>
-          <% }) %> 
+                <div class="bug">
+                    <p class="title">Title: <span class="name"><%- issue.title %></span></p>
+                    <p class="description">Description: <%- issue.description %></p>
+                    <p class="label">Label: <%- issue.label %></p>
+                    <p class="author">Author: <%- issue.issueAuthor %></p>
+                   </div>
+              <% }) %> 
+          <% } else{ %>  
+            <h1 class="noIssueFound">No Issues Found</h1>
+         <% } %>
+        
        
       </div>
     </div>

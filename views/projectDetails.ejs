@@ -9,13 +9,15 @@
         <p class="projectAuthor">
           Author: <span class="name"><%- project.authorName %></span>
         </p>
-        <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>"
-          ><i class="fa-solid fa-circle-plus fa-3x icon"></i
-        ></a>
         <div class="tooltip tooltipCIProjectDetails"><p>Create Issue</p></div>
       </div>
+      <div style="margin:3rem auto; display:flex;justify-content: center;">
+        <a class="pdCreateIssueLink" href="../create_issue/<%- project.id %>">
+          Create New Issue
+        </a>
+      </div>
     </div>
-    <div class="functionality">
+    <div class="functionality" id="functionality" >
       <div class="btnSection">
         <div id="filterSection" class="filterSection">
           <div class="head">Filter:</div>
@@ -42,7 +44,6 @@
       <hr style="margin:.5rem 0;">
       <div class="bugSection">
         <% if(project.issues.length > 0 ){ %>
-            <!-- <h1>foo</h1> -->
             <% project.issues.forEach((issue)=>{ %>
 
                 <div class="bug">
@@ -60,18 +61,12 @@
       </div>
     </div>
   </div>
-  <!-- <p class="bugsHeading">Bugs</p> -->
-  <!-- <div class="bugs">
-        <p>Title: Editing</p>
-        <p>desc: Editing</p>
-        <div>Label:
-            <label for="first">Editing</label>
-            <input type="checkbox" id="first">
-            <label for="second">Syntax</label>
-            <input type="checkbox" id="second">
-            <label for="third">type</label>
-            <input type="checkbox" id="third">
-        </div>
-        <p>author: Editing</p>
-    </div> -->
 </div>
+<!-- <script> </script> -->
+<!-- <script >
+  // var data = <%= JSON.stringify(project) %>
+</script> -->
+<input type="hidden" id="dataFromServer" value="<%= JSON.stringify(project) %>">
+<script src="/js/projectDetails.js">
+
+</script>

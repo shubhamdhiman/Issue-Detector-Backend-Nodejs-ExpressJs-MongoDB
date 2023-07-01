@@ -21,8 +21,7 @@
 .projectDetailSection {
     width: 50%;
     height:100%;
-    border: 2px solid black;
-    /* border-radius: 2rem; */
+    /* border: 2px solid black; */
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -30,7 +29,6 @@
 .projectDetailSection .projectName {
     font-size: 2.2rem;
     font-weight: 500;
-    /* color:#2cc810; */
     color: darkviolet;
     font-weight: bold;
 }
@@ -52,19 +50,33 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-.projectDetailSection .pdCreateIssueLink .icon{
+.projectDetailSection .pdCreateIssueLink{
+    /* width:100%; */
+    background-color: #39ff14;
+    text-decoration:none;
+    font-size:1.5rem;
+    padding:.5rem 7rem;
+    /* margin:1rem auto; */
+    border:2px solid black;
+    transition: all .2s ease-in-out;
+    color:black;
+}
+.projectDetailSection .pdCreateIssueLink:hover{
+    
+    border-radius:2rem;
+}
+/* .projectDetailSection .pdCreateIssueLink .icon{
     color:black;
 }
 .projectDetailSection .pdCreateIssueLink .icon:hover{
     color:darkviolet;
-}
+} */
 
 .detailsContainer .functionality {
     width: 45%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 1rem;
-    height:90%;
-    /* border-radius: 2rem; */
+    height:95%;
 }
 
 .functionality .filterSection {
@@ -72,14 +84,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom:1rem;
-    /* flex-direction: column; */
 }
 
 .head {
     font-size: 1.4rem;
     font-weight: bold;
-
-    /* flex-direction: column; */
 }
 
 .functionality .searchSection {
@@ -141,10 +150,15 @@ input[type="checkbox"]:checked::before {
 }
 
 .bugSection{
-    /* border:2px solid black; */
     padding:.5rem;
-    height:400px;
-    overflow-y: scroll;
+    height:450px;
+    overflow-y: auto;
+}
+.bugSection::-webkit-scrollbar{
+    width:10px;
+}
+.bugSection::-webkit-scrollbar-thumb{
+    background-color: #39ff14;
 }
 .bug{
     border:2px solid black;
@@ -175,7 +189,6 @@ input[type="checkbox"]:checked::before {
     font-weight:bold;
 }
 .noIssueFound{
-    /* margin:0 auto; */
     display: flex;
     justify-content: center;
 }

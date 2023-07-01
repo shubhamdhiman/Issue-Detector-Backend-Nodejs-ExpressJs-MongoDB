@@ -18,5 +18,10 @@ body{
     margin-right:2rem;
 }
 .rightNav a{
-    color:#0a1019;background-color: #39ff14;font-size:1.5rem;padding:.4rem 1rem;border-radius:.2rem;text-decoration:none;font-family:'Poppins',sans-serif;
+    color:#0a1019;background-color: #39ff14;font-size:1.5rem;
+    padding:.4rem 1rem;text-decoration:none;font-family:'Poppins',sans-serif;
+    transition: all .2s ease-in-out;
+}
+.rightNav a:hover{
+    border-radius:1.5rem;
 }

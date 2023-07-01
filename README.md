@@ -41,6 +41,7 @@ Create Issue Page
 
 ## To start the project in local system, write two commands in the terminal
 * npm install
+  Then after installing all the dependencies, write
 * npm run dev
 
 ## Contact Me

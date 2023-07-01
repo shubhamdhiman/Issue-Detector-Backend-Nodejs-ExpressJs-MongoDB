@@ -1,7 +1,10 @@
 <div class="container">
   <p class="heading">Project Details</p>
 
+  <!-- Inner Container -->
   <div class="detailsContainer">
+
+    <!-- Project Details Section -->
     <div class="projectDetailSection">
       <p class="projectName"><%- project.projectName %></p>
       <p class="projectDesc"><%- project.description %></p>
@@ -17,10 +20,12 @@
         </a>
       </div>
     </div>
+
+    <!-- Functionality Section (Search and Filter) -->
     <div class="functionality" id="functionality" >
       <div class="btnSection">
 
-        <!-- Filter Section -->
+        <!-- Filter by Label -->
         <div id="filterSection" class="filterSection">
           <div class="head">Filter:</div>
           <div style="display: flex; align-items: center">
@@ -35,13 +40,32 @@
             <button class="filterButton" id="filterButton">Filter</button>
           </div>
         </div>
+        <!-- Filter By Author -->
+        <div id="filterSectionByAuthor" class="filterSection">
+          <div class="head">Filter (Author):</div>
+          <div id="authorsList" style="display: flex; align-items: center">
+            <!-- Append List Here -->
+            <% if(project.issues.length > 0 ){ %>
+              <select name="" id="label" style="width:135px;">
+              <% project.issues.forEach((issue)=>{ %>
+                  <option class="option" value="<%- issue.issueAuthor%>"><%- issue.issueAuthor%></option>
+                <% }) %> 
+              </select>
+            <% } else{ %>  
+              <select name="" id="">
+                <option value="create issue">Create Issue</option>
+              </select>
+           <% } %>
+            <button class="filterButton" id="filterButtonByAuthor">Filter</button>
+          </div>
+        </div>
 
         <!-- Search Section -->
         <div id="searchSection" class="searchSection">
           <div class="head">Search:</div>
           <div>
-            <input class="searchBar" type="text" placeholder="Search..." />
-            <button class="searchButton">Search</button>
+            <input id="searchBar" class="searchBar" type="text" placeholder="Search..." />
+            <button class="searchButton"id="searchButton">Search</button>
           </div>
         </div>
       </div>
@@ -68,11 +92,8 @@
     </div>
   </div>
 </div>
-<!-- <script> </script> -->
-<!-- <script >
-  // var data = <%= JSON.stringify(project) %>
-</script> -->
+<!-- To grab data in js file -->
 <input type="hidden" id="dataFromServer" value="<%= JSON.stringify(project) %>">
-<script src="/js/projectDetails.js">
 
-</script>
+<!-- Js File -->
+<script src="/js/projectDetails.js"></script>

@@ -158,3 +158,19 @@
     font-weight: bold;
     color:blueviolet;
 }
+
+@media screen and (max-width:1270px) {
+    
+    .container .projectContainer .box {
+        width: 90%;
+        /* height: 200px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        border-radius: 2rem;
+        margin-bottom: 2rem; */
+    }
+
+}

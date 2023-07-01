@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+
+// Creating Schema for Issues
 const issueSchema = new mongoose.Schema({
 
     title:{
@@ -26,4 +28,5 @@ const issueSchema = new mongoose.Schema({
     timestamps:true,
 })
 
+// Exporting model
 module.exports = mongoose.model('Issue',issueSchema)

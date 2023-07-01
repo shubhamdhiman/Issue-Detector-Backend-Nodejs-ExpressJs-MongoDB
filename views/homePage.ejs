@@ -1,3 +1,4 @@
+<!-- Home Page Container -->
 <div class="container">
   <div class="mainHeading">
     <p class="heading">Projects</p>
@@ -7,6 +8,7 @@
     <div class="tooltip addProjectTooltip"><p>Create Project</p></div>
   </div>
   <div class="projectContainer">
+    <!-- Rendering all the projects using forEach loop -->
     <% allProjects.forEach((project)=>{ %>
 
       <div class="box">
@@ -18,6 +20,8 @@
           <p class="projectAuthor">Author:<span class="name"> <%- project.authorName %></span></p>
           <div class="detailIssueLinks">
             <p class="issueCount"> Issues Tracked: <span class="count"><%- project.issues.length %></span></p>
+
+            <!-- Tooltips when user hover over the icon present in links -->
             <a class="projectDetails" style="margin-right: 2rem" href="project_details/<%- project.id %>"
               ><i class="fa-solid fa-circle-info  boxLink"></i
             ></a>

@@ -1,4 +1,4 @@
-// const issueModel = require("../../models/issueModel");
+
 
 // Bringing data from ejs to js file
 const dataFromServer = document.getElementById("dataFromServer");
@@ -6,9 +6,9 @@ const dataParse = JSON.parse(dataFromServer.value);
 console.log(dataParse.issues);
 
 
-const bugSection = document.getElementById("bugSection");
 
 // Function to display issues after filtering
+const bugSection = document.getElementById("bugSection");
 function filteredFunction(arr) {
     bugSection.innerHTML = "";
 

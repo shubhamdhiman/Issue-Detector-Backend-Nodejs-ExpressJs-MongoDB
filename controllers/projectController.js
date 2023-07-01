@@ -5,42 +5,34 @@ const asyncHandler = require("express-async-handler")
 // Home Page to show projects
 const homePage = asyncHandler( async (req,res)=>{
     let allProjects = await ProjectModel.find({}).sort('-createdAt')
-    // res.status(200).json({message:"Home Page"})
     res.render('homePage',{title:"Issue Tracker || Home ",allProjects})
 })
 
 // Create Project page
 const createProjectPage = asyncHandler( async (req,res)=>{
-    // res.status(200).json({message:"create project page"})
-
     res.render('createProject',{title:"Issue Tracker || Create Project "})
 })
 
 // Create Project (save form data)
 const createProject = asyncHandler( async (req,res)=>{
-    // console.log("this is req.body: ", req.body)
     const project = await ProjectModel.create({
         projectName:req.body.projectName,
         description:req.body.description,
         authorName:req.body.authorName
     })
     await project.save()
-    // res.render('createProject',{title:"Issue Tracker || Create Project "})
     res.redirect('/')
 })
 
 // Project Details Page
 const projectDetails = asyncHandler( async (req,res)=>{
-    // res.status(200).json({message:"project details Page"})
     const project = await ProjectModel.findById(req.params.id).populate({path:"issues"})
-    // console.log(project.issues[0]) 
     res.render('projectDetails',{title:"Issue Tracker || Details ",project})
 })
 
 // Create Issue Page
 const createIssuePage = asyncHandler( async (req,res)=>{
     const project = await ProjectModel.findById(req.params.id)
-    // const project = await ProjectModel.findById(req.params.id)
     res.render('createIssue',{title:"Issue Tracker || Create Issue ", project})
 })
 
@@ -53,9 +45,12 @@ const createIssue = asyncHandler( async (req,res)=>{
         label:req.body.label,
         issueAuthor:req.body.author
     })
+    // adding the issue in project model
     project.issues.push(issue)
     await project.save()
     await issue.save()
     res.redirect("back")
 })
+
+// Exporting all the controller functions
 module.exports = {homePage, createProjectPage, createProject, projectDetails, createIssuePage, createIssue}  

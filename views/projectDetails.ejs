@@ -44,9 +44,10 @@
         <div id="filterSectionByAuthor" class="filterSection">
           <div class="head">Filter (Author):</div>
           <div id="authorsList" style="display: flex; align-items: center">
-            <!-- Append List Here -->
+            <!-- Rendering the list of issues based on the length of array -->
             <% if(project.issues.length > 0 ){ %>
               <select name="" id="label" style="width:135px;">
+                <!-- Making a loop over each issue -->
               <% project.issues.forEach((issue)=>{ %>
                   <option class="option" value="<%- issue.issueAuthor%>"><%- issue.issueAuthor%></option>
                 <% }) %> 
@@ -74,6 +75,7 @@
       <!-- Bug Section -->
       <div class="bugSection" id="bugSection">
         <% if(project.issues.length > 0 ){ %>
+          <!-- Rendering bugs based on search result -->
             <% project.issues.forEach((issue)=>{ %>
 
                 <div class="bug">

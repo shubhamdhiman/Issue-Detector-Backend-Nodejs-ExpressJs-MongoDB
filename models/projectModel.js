@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+// Creating Schema for Issues
 const projectsSchema = new mongoose.Schema({
 
     projectName:{
@@ -14,6 +15,7 @@ const projectsSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    // We will have to populate issues from the issue model based upon object _id
     issues:[
         {
             type:mongoose.Schema.Types.ObjectId,
@@ -28,5 +30,5 @@ const projectsSchema = new mongoose.Schema({
 },{
     timestamps:true,
 })
-
+// Exporting model
 module.exports = mongoose.model('Project',projectsSchema)

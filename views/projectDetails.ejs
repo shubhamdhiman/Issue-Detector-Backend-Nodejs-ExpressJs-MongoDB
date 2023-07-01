@@ -19,6 +19,8 @@
     </div>
     <div class="functionality" id="functionality" >
       <div class="btnSection">
+
+        <!-- Filter Section -->
         <div id="filterSection" class="filterSection">
           <div class="head">Filter:</div>
           <div style="display: flex; align-items: center">
@@ -30,9 +32,11 @@
             <label for="syntaxError" class="labelCheckbox">Syntax Error</label>
             <input type="checkbox" id="lineMissing" value="Line Missing" />
             <label for="lineMissing" class="labelCheckbox">Line Missing</label>
-            <button class="filterButton">Filter</button>
+            <button class="filterButton" id="filterButton">Filter</button>
           </div>
         </div>
+
+        <!-- Search Section -->
         <div id="searchSection" class="searchSection">
           <div class="head">Search:</div>
           <div>
@@ -42,7 +46,9 @@
         </div>
       </div>
       <hr style="margin:.5rem 0;">
-      <div class="bugSection">
+
+      <!-- Bug Section -->
+      <div class="bugSection" id="bugSection">
         <% if(project.issues.length > 0 ){ %>
             <% project.issues.forEach((issue)=>{ %>
 

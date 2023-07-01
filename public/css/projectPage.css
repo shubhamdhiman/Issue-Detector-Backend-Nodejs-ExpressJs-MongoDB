@@ -21,7 +21,6 @@
 .projectDetailSection {
     width: 50%;
     height:100%;
-    /* border: 2px solid black; */
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -51,12 +50,10 @@
     font-weight: bold;
 }
 .projectDetailSection .pdCreateIssueLink{
-    /* width:100%; */
     background-color: #39ff14;
     text-decoration:none;
     font-size:1.5rem;
     padding:.5rem 7rem;
-    /* margin:1rem auto; */
     border:2px solid black;
     transition: all .2s ease-in-out;
     color:black;
@@ -65,16 +62,9 @@
     
     border-radius:2rem;
 }
-/* .projectDetailSection .pdCreateIssueLink .icon{
-    color:black;
-}
-.projectDetailSection .pdCreateIssueLink .icon:hover{
-    color:darkviolet;
-} */
 
 .detailsContainer .functionality {
     width: 45%;
-    /* border: 2px solid black; */
     padding: 1rem;
     height:95%;
 }
@@ -117,7 +107,6 @@ input[type="checkbox"] {
 .filterButton, .searchButton{
     padding:.4rem 1rem;
     font-size:1.3rem;
-    /* border-radius:1rem; */
     margin-left:1rem;
     background-color: #39ff14;
     cursor: pointer;
@@ -191,4 +180,117 @@ input[type="checkbox"]:checked::before {
 .noIssueFound{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width:1792px) {
+    .detailsContainer {
+        width: 95%;
+        height:65vh;
+    }
+}
+@media screen and (max-width:1530px) {
+    .detailsContainer {
+        width: 95%;
+        height:65vh;
+    }
+    .projectDetailSection {
+        width: 35%;
+    }
+    .detailsContainer .functionality {
+        width: 60%;
+    }
+    .projectDetailSection .pdCreateIssueLink{
+        font-size:1.3rem;
+        padding:.4rem 3rem;
+    }
+    .projectDetailSection .projectName {
+        font-size: 2rem;
+    }
+    .projectDetailSection .projectDesc {
+        font-size: 1.05rem;
+        margin: .7rem 0;
+    }
+    .projectDetailSection .projectAuthor .name {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:1132px) {
+    .functionality .filterSection {
+        margin-bottom:.8rem;
+    }
+    
+    .head {
+        font-size: 1.2rem;
+    }
+    
+    input[type="checkbox"] {
+        height: 15px;
+        width: 15px;
+        margin-left:.8rem;
+        border-radius: 3px;
+    }
+    .labelCheckbox{
+        font-size:1.1rem;
+        margin-left:.2rem;
+    }
+    .filterButton, .searchButton{
+        padding:.3rem .85rem;
+        font-size:1.2rem;
+    }
+    .filterButton:hover, .searchButton:hover{
+        border-radius:1.3rem;
+    }
+    .searchBar{
+        padding:.35rem .8rem;
+        font-size:1.2rem;
+    }
+    .searchBar:focus{
+        border-radius:1.5rem;
+    }
+    input[type="checkbox"]::before {
+        width: 12px;
+        height: 12px;
+    }
+    .bugSection{
+        height:450px;
+    }
+    .bugSection::-webkit-scrollbar{
+        width:8px;
+    }
+    .bugSection .title{
+        font-size:1.05rem;
+    }
+    .bugSection .title .name{
+        font-size:1.2rem;
+    }
+    .bugSection .description{
+        font-size:1rem;
+    }
+    .bugSection .label{
+        font-size:1.05rem;
+    }
+    .bugSection .author{
+        font-size:1.05rem;
+    }
+    .detailsContainer {
+        width: 95%;
+        /* height:65vh; */
+        height:auto;
+    }
+}
+@media screen and (max-width:1050px) {
+    
+    .detailsContainer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding:2rem;
+        flex-direction:column;
+    }
+    .detailsContainer .functionality {
+        width: 100%;
+    }
+    .projectDetailSection{
+        width:100%;
+    }
 }

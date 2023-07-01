@@ -39,6 +39,9 @@ Project Details Page
 Create Issue Page
 ![create issue](https://github.com/shubhamdhiman/Issue-Detector-Backend-Nodejs-ExpressJs-MongoDB/assets/18380165/e0da26e4-bf1c-465d-a604-9a374241690b)
 
+## To start the project in local system, write two commands in the terminal
+* npm install
+* npm run dev
 
 ## Contact Me
 * Email: shubhamdhiman00.sd@gmail.com
